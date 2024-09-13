@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'app_router.dart';
 
 void main() {
   runApp(
@@ -12,7 +13,10 @@ class FlutterDeepLinks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO 1: Add MaterialApp.router
-    // TODO 3: Add our AppRouter.routes as the router property
-    return MaterialApp();
+    // TODO 3: Add our AppRouter.routerConfig as the router property
+    return MaterialApp.router(
+      /// Add the routerConfig property
+      routerConfig: AppRouter.routerConfig,
+    );
   }
 }

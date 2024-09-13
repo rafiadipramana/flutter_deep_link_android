@@ -6,6 +6,7 @@ class DetailPage extends StatelessWidget {
 
   const DetailPage({
     super.key,
+
     /// Initialize the passedData parameter as not required
     this.passedData,
   });
@@ -16,11 +17,20 @@ class DetailPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Detail Page'),
       ),
-      body: Column(
-        children: <Widget>[
-          const Text('Hi, You are on the Detail Page :)'),
-          // TODO 5: If passedData is not null, display it
-        ],
+      body: SizedBox(
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text('Hi, You are on the Detail Page :)'),
+            // TODO 5: If passedData is not null, display it
+            Text(
+              /// Using ternary operator to check if passedData is not null
+              passedData != null ? passedData.toString() : 'No data passed',
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
       ),
     );
   }
